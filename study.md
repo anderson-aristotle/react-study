@@ -1,4 +1,4 @@
-# React Study
+# Reactjs Study
 
 Use your favorite search engine and the provided readings to research and
 respond to the following questions.
@@ -10,9 +10,10 @@ material. Instead, digest what you've read and repeat it in your own voice.
 
 ## Modern JavaScript
 
-JavaScript has evolved quite a bit in the last five years, and React projects
+JavaScript has evolved quite a bit in the last five years, and Reactjs projects
 typically make heavy use of the language's newer features and conventions. We
-want to make sure you're comfortable writing modern JS before we get into React.
+want to make sure you're comfortable writing modern JS before we get into
+Reactjs.
 
 Many of these new features were introduced in the ECMAScript 2015 language
 specification, more commonly known as ES6. ES6 is now used widely in modern web
@@ -162,11 +163,36 @@ And somewhere else:
 import { addTwo, addThree } from './arithmetic';
 ```
 
-## React
+## Reactjs
 
 Now that we have the JavaScript tools in our belts, lets take a look at the
-React homepage to get an introduction to this powerful technology.
+Reactjs homepage to get an introduction to this powerful technology.
 
 ### Required Readings
 
-- [The React Homepage](https://reactjs.org/)
+- [The Reactjs Homepage](https://reactjs.org/)
+- [Reactjs Main Concepts - Hello World](https://reactjs.org/docs/hello-world.html)
+- [Reactjs Main Concepts - Introducing JSX](https://reactjs.org/docs/introducing-jsx.html)
+- [Reactjs Main Concepts - Rendering Elements](https://reactjs.org/docs/rendering-elements.html)
+
+## Questions
+
+What is a Front-End Framework and why do you think they are popular amongst
+modern web developers?
+
+```md
+<!-- your answer here -->
+```
+
+How is Reactjs different from other frameworks and why is it so
+frequently used?
+
+```md
+<!-- your answer here -->
+```
+
+What is JSX and how does it help Reactjs developers?
+
+```md
+<!-- your answer here -->
+```
