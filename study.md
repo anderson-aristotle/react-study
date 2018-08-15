@@ -1,0 +1,172 @@
+# React Study
+
+Use your favorite search engine and the provided readings to research and
+respond to the following questions.
+
+In your responses, be sure to cite any relevant sources you consulted in your
+search. We ask you to write responses in your own words in order to see how you
+process what you've read. Please do not respond with direct quotes from source
+material. Instead, digest what you've read and repeat it in your own voice.
+
+## Modern JavaScript
+
+JavaScript has evolved quite a bit in the last five years, and React projects
+typically make heavy use of the language's newer features and conventions. We
+want to make sure you're comfortable writing modern JS before we get into React.
+
+Many of these new features were introduced in the ECMAScript 2015 language
+specification, more commonly known as ES6. ES6 is now used widely in modern web
+development, both front-end and back-end. Modern browsers now support nearly
+100% of these ES6 features, but it's still common to use a transpiler like Babel
+to convert ES6 syntax into older, more universally supported JS syntax. You
+don't need to worry about that step for now though. Let's dive right into these
+useful new features.
+
+### Arrow Functions
+
+"function", "function", "function"... Are you tired of writing that word? So
+are we. The arrow function `=>` is a more concise syntax for declaring
+functions. It looks like a little rocket arrow, in fact, and something that
+cool isn't usually in JavaScript. Arrow functions are not _only_ different in
+syntax, however - their scope is also different from a regular `function`
+declaration.
+
+#### This binding - and the lack thereof
+
+In non-arrow functions, every function defines its own `this`. There are tons of hacks to preserve the context, like `var that = this` and using `.bind(this)`. The following code might look familiar:
+
+```javascript
+function eatBreakfast(pancakes) {
+  var that = this;
+  that.food = 'Knife please?';
+  Waiter.bringCutlery(function (silverware) {
+    that.food = silverware;
+  });
+}
+```
+
+Another popular variant is `var self = this`. Whatever hack you've been using,
+you don't need to do it anymore!
+
+Arrow functions don't change the definition of `this`. So, if `this` is already
+defined in the scope, and you call an arrow function, you can access `this`
+directly.
+
+```javascript
+// Original function
+function eatBreakfast(pancakes) {
+  var that = this;
+  that.food = 'Knife please?';
+  Waiter.bringCutlery(function (silverware) {
+    that.food = silverware;
+  });
+}
+
+// Equivalent arrow function
+const eatBreakfast = pancakes => {
+  this.food = 'Knife please?';
+  Waiter.bringCutlery((silverware) => this.food = silverware);
+}
+```
+> Check it out - the arrow function can be used anywhere you declare a function!
+
+### ES6 Class Syntax
+
+You're probably aware that unlike traditional object-oriented programming
+languages, JavaScript uses prototypal inheritance. If you need a refresher on
+what that means, have a glance at [this](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Inheritance).
+
+Basically, it means that we can create something similar to a class by creating
+a constructor function. We can add methods by modifying that function's
+`prototype` property. If we wanted to create `Food` class, we could do this:
+
+```js
+const Food = function (name, flavor) {
+  this.name = name
+  this.flavor = flavor
+}
+```
+To instantiate our `Food` class, we call that constructor function with the
+`new` keyword, like so:
+
+```js
+const burrito = new Food('burrito', 'savory and delicious')
+```
+
+If we wanted to give it a method, we'd do that by adding it to the constructor's
+`prototype` property:
+
+```js
+Food.prototype.eat = function () {
+  console.log(`Mmmm... that tasted ${this.flavor}`)
+}
+```
+
+That's a bit verbose and very different from classes in OOP languages like Ruby.
+But wait, enter ES6! JavaScript now has a class syntax built in which still uses
+prototypal inheritance under the hood, but provides a much nicer and more
+familiar syntax to create classes. We can re-write all the above code like
+this:
+
+```js
+class Food {
+  constructor(name, flavor) {
+    this.name = name
+    this.flavor = flavor
+  }
+
+  eat () {
+    console.log(`Mmmm... that tasted ${this.flavor}`)
+  }
+}
+```
+
+Skim through [this page](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
+to get a sense of how to use this new `class` syntax.
+
+### Import/Export and Modules
+
+In ES6, you can import modules directly without declaring them as global
+variables. This makes namespacing your app a non-issue. Before module imports,
+namespace was often a primary concern in JavaScript.
+
+So, if you want export the `addTwo` function as a module, you can create a file
+called "addTwo.js":
+
+```javascript
+const addTwo = num => num + 2;
+
+export default addTwo;
+```
+
+And in another file, say "app.js", you can import it:
+
+```javascript
+import addTwo from './addTwo';
+
+addTwo(3); // 5
+```
+
+You can also export multiple modules from a file, like so:
+
+```javascript
+// in arithmetic.js
+export const addTwo = num => num + 2;
+
+export const addThree = num => num + 3;
+```
+
+And somewhere else:
+
+```javascript
+import { addTwo, addThree } from './arithmetic';
+```
+
+## React
+
+Now that we have the JavaScript tools in our belts, lets take a look at the
+React homepage to get an introduction to this powerful technology.
+
+### Required Readings
+
+- [The React Homepage](https://reactjs.org/)
