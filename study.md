@@ -34,7 +34,9 @@ declaration.
 
 #### This binding - and the lack thereof
 
-In non-arrow functions, every function defines its own `this`. There are tons of hacks to preserve the context, like `var that = this` and using `.bind(this)`. The following code might look familiar:
+In non-arrow functions, every function defines its own `this`. There are tons of
+hacks to preserve the context, like `var that = this` and using `.bind(this)`.
+The following code might look familiar:
 
 ```javascript
 function eatBreakfast(pancakes) {
@@ -69,6 +71,7 @@ const eatBreakfast = pancakes => {
   Waiter.bringCutlery((silverware) => this.food = silverware);
 }
 ```
+
 > Check it out - the arrow function can be used anywhere you declare a function!
 
 ### ES6 Class Syntax
@@ -87,6 +90,7 @@ const Food = function (name, flavor) {
   this.flavor = flavor
 }
 ```
+
 To instantiate our `Food` class, we call that constructor function with the
 `new` keyword, like so:
 
