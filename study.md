@@ -167,6 +167,34 @@ And somewhere else:
 import { addTwo, addThree } from './arithmetic';
 ```
 
+### Spread Operator
+
+The spread operator (`...`) is one of the most popular new features in
+Javascript. This operator can be used on any iterable object in Javascript,
+with iterables being anything that can be looped over such as strings and arrays.
+
+So what does the spread operator do? Well, it allows an *iterable* to spread or
+expand individually inside a *receiver*. We need both pieces, the iterable and
+receiver, in order for the spread operator to work.
+
+Take a look at these examples:
+
+```js
+console.log(...'my string') // logs ['m', 'y', 's', 't', 'r', 'i', 'n', 'g']
+
+const arr1 = [1, 2, 3]
+const arr2 = [...arr1, 4, 5]
+console.log(arr2) // logs [1, 2, 3, 4, 5]
+```
+
+In the string example, the string `'my string'` is the iterable, and the
+`console.log` method is our receiver.
+
+In the array example, `arr1` is the iterable we are using the spread operator
+on, and the receiver is `arr2` that we are putting `arr1` into.
+
+To read more on the spread operator check out [this article.](https://codeburst.io/a-simple-guide-to-destructuring-and-es6-spread-operator-e02212af5831)
+
 ## Reactjs
 
 Now that we have the JavaScript tools in our belts, lets take a look at the
